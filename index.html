@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Kennel</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #000;
+            background-color: #fff;
+        }
+
+        header {
+            background: #000;
+            height: 100vh;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 0 20px;
+            padding-top: 100px;
+            position: relative;
+            overflow: hidden;
+            background-image: url('https://scontent.fskg5-1.fna.fbcdn.net/v/t39.30808-6/448359148_1169359527654147_704417883903949818_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=3dj_FIS5wCkQ7kNvgE2E_PA&_nc_ht=scontent.fskg5-1.fna&oh=00_AYDENPP-iwx9U51uRZIv4kJN9hSiLFUMeYSI3LFVxsekBQ&oe=66D25A62');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+        }
+
+        .header-content h1 {
+            font-size: 48px;
+            margin: 0;
+            color: #fff;
+        }
+
+        .header-content p {
+            font-size: 24px;
+            margin: 10px 0;
+            color: #fff;
+        }
+
+        .header-content .cta-button {
+            margin-top: 20px;
+            padding: 10px 30px;
+            background-color: #444;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: background-color 0.3s ease;
+        }
+
+        .header-content .cta-button:hover {
+            background-color: #333;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 85%;
+            background-color: rgba(0, 0, 0, 0.404);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-bottom-left-radius: 16px;
+            border-bottom-right-radius: 16px;
+            z-index: 1000;
+            padding: 10px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            text-align: center;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 10px 20px;
+        }
+
+        .nav-links a:hover {
+            color: #ccc;
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #000;
+        }
+
+        .room-container, .gallery-container, .dog-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .room, .gallery-container img, .dog-container img {
+            flex: 1 1 calc(33.333% - 40px);
+            margin: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .room img, .dog-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            filter: grayscale(100%);
+        }
+
+        .room h3, .dog-container h3 {
+            font-size: 24px;
+            margin: 10px 0;
+            color: #000;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            filter: grayscale(100%);
+        }
+
+        .gallery-container img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background-color: #000;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 20px;
+            }
+
+            .menu-toggle {
+                display: block;
+                font-size: 24px;
+                cursor: pointer;
+                color: #fff;
+            }
+
+            .header-content h1 {
+                font-size: 36px;
+            }
+
+            .header-content p {
+                font-size: 20px;
+            }
+
+            .cta-button {
+                padding: 10px 20px;
+                font-size: 16px;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                background-color: rgba(0, 0, 0, 0.8);
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                display: none;
+                align-items: center;
+                width: 100%;
+                border-bottom-left-radius: 16px;
+                border-bottom-right-radius: 16px;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+
+            nav.active .nav-links {
+                display: flex;
+            }
+
+            .nav-links a {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .room, .gallery-container img, .dog-container img {
+                flex: 1 1 100%;
+            }
+
+            .gallery-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                max-height: 400px;
+                overflow-y: auto;
+                position: relative;
+            }
+
+            .scroll-indicator {
+                position: absolute;
+                bottom: 10px;
+                width: 100%;
+                text-align: center;
+                pointer-events: none;
+            }
+
+            .scroll-indicator::after {
+                content: '⬇️';
+                font-size: 24px;
+                color: #000;
+                animation: bounce 1.5s infinite;
+            }
+
+            @keyframes bounce {
+                0%, 100% {
+                    transform: translateY(0);
+                }
+                50% {
+                    transform: translateY(-10px);
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">El Valiente</div>
+            <ul class="nav-links">
+                <li><a href="#rooms">Kennels</a></li>
+                <li><a href="#facilities">Facilities</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#male-dogs">Male Dogs</a></li>
+                <li><a href="#female-dogs">Female Dogs</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle">☰</div>
+        </nav>
+        <div class="header-content">
+            <h1>Welcome to Our Dog Kennel</h1>
+            <p>Where your pets feel at home</p>
+            <a href="#contact" class="cta-button">Contact Us</a>
+        </div>
+    </header>
+
+    <section id="rooms">
+        <h2>Our Kennels</h2>
+        <div class="room-container">
+            <div class="room">
+                <img src="https://example.com/dog-kennel-1.jpg" alt="Kennel 1">
+                <h3>Kennel One</h3>
+                <p>Comfortable and spacious for your furry friends.</p>
+            </div>
+            <div class="room">
+                <img src="https://example.com/dog-kennel-2.jpg" alt="Kennel 2">
+                <h3>Kennel Two</h3>
+                <p>Safe and cozy with all the amenities your pet needs.</p>
+            </div>
+            <div class="room">
+                <img src="https://example.com/dog-kennel-3.jpg" alt="Kennel 3">
+                <h3>Kennel Three</h3>
+                <p>Perfect for relaxation and playtime.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="facilities">
+        <h2>Facilities</h2>
+        <p>Our kennel offers a range of facilities to ensure your pets have a comfortable stay. From play areas to grooming services, we cater to all your pets' needs to ensure their well-being and happiness.</p>
+    </section>
+
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-container">
+            <img src="https://example.com/gallery-1.jpg" alt="Gallery 1">
+            <img src="https://example.com/gallery-2.jpg" alt="Gallery 2">
+            <img src="https://example.com/gallery-3.jpg" alt="Gallery 3">
+            <img src="https://example.com/gallery-4.jpg" alt="Gallery 4">
+        </div>
+    </section>
+
+    <section id="male-dogs">
+        <h2>Male Dogs</h2>
+        <div class="dog-container">
+            <div class="room">
+                <img src="https://example.com/male-dog-1.jpg" alt="Male Dog 1">
+                <h3>Male Dog One</h3>
+                <p>Meet our handsome and energetic male dogs.</p>
+            </div>
+            <div class="room">
+                <img src="https://example.com/male-dog-2.jpg" alt="Male Dog 2">
+                <h3>Male Dog Two</h3>
+                <p>Friendly and playful companions waiting for you.</p>
+            </div>
+            <div class="room">
+                <img src="https://example.com/male-dog-3.jpg" alt="Male Dog 3">
+                <h3>Male Dog Three</h3>
+                <p>Our charming and loyal male dogs.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="female-dogs">
+        <h2>Female Dogs</h2>
+        <div class="dog-container">
+            <div class="room">
+                <img src="https://example.com/female-dog-1.jpg" alt="Female Dog 1">
+                <h3>Female Dog One</h3>
+                <p>Meet our beautiful and loving female dogs.</p>
+            </div>
+            <div class="room">
+                <img src="https://example.com/female-dog-2.jpg" alt="Female Dog 2">
+                <h3>Female Dog Two</h3>
+                <p>Sweet and gentle companions ready to be your friend.</p>
+            </div>
+            <div class="room">
+                <img src="https://example.com/female-dog-3.jpg" alt="Female Dog 3">
+                <h3>Female Dog Three</h3>
+                <p>Our affectionate and playful female dogs.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>For reservations or inquiries, please contact us at:</p>
+        <p>Phone: +30 697 855 3777</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Dog Kennel. All rights reserved. created by zotis</p>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
