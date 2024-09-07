@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dog Kennel</title>
+    <title>El Valiente Bulgaria Kennel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         body {
             margin: 0;
@@ -26,7 +27,7 @@
             padding-top: 100px;
             position: relative;
             overflow: hidden;
-            background-image: url('https://scontent.fskg5-1.fna.fbcdn.net/v/t39.30808-6/448359148_1169359527654147_704417883903949818_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=3dj_FIS5wCkQ7kNvgE2E_PA&_nc_ht=scontent.fskg5-1.fna&oh=00_AYDENPP-iwx9U51uRZIv4kJN9hSiLFUMeYSI3LFVxsekBQ&oe=66D25A62');
+            background-image: url('assets/image/elly_banner.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -146,10 +147,10 @@
         }
 
         .room img, .dog-container img {
-            width: 100%;
-            height: auto;
+            width: 90%;
+            height: 300px;
             border-radius: 15px;
-            filter: grayscale(100%);
+            object-fit: contain;
         }
 
         .room h3, .dog-container h3 {
@@ -278,6 +279,23 @@
                 }
             }
         }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            font-size: 40px;
+            color: #000;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2); /* Slight zoom on hover */
+            color: #007bff; /* Change color on hover */
+        }
     </style>
 </head>
 <body>
@@ -287,7 +305,6 @@
             <ul class="nav-links">
                 <li><a href="#rooms">Kennels</a></li>
                 <li><a href="#facilities">Facilities</a></li>
-                <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#male-dogs">Male Dogs</a></li>
                 <li><a href="#female-dogs">Female Dogs</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -324,34 +341,46 @@
 
     <section id="facilities">
         <h2>Facilities</h2>
-        <p>Our kennel offers a range of facilities to ensure your pets have a comfortable stay. From play areas to grooming services, we cater to all your pets' needs to ensure their well-being and happiness.</p>
+        <p>Our kennel is equipped with top-notch facilities designed to support the health and well-being of our dogs. Spacious play areas, we ensure that all our dogs are cared for in a safe and nurturing environment. Our focus is on providing the best possible start for every puppy, ensuring they are well-socialized and healthy before joining their new families.</p>
+        <p> Specializes in breeding high-quality dogs and providing loving homes for our puppies. With a focus on care, health, and temperament, we ensure that every puppy is well-prepared for its new family. Whether you're looking for a new furry companion or need expert advice on raising a dog, we are here to guide you through every step.</p>
     </section>
 
-    <section id="gallery">
-        <h2>Gallery</h2>
-        <div class="gallery-container">
-            <img src="https://example.com/gallery-1.jpg" alt="Gallery 1">
-            <img src="https://example.com/gallery-2.jpg" alt="Gallery 2">
-            <img src="https://example.com/gallery-3.jpg" alt="Gallery 3">
-            <img src="https://example.com/gallery-4.jpg" alt="Gallery 4">
-        </div>
-    </section>
 
     <section id="male-dogs">
         <h2>Male Dogs</h2>
         <div class="dog-container">
             <div class="room">
-                <img src="https://example.com/male-dog-1.jpg" alt="Male Dog 1">
+                <img src="assets/image/males/image_123650291.JPG" alt="Male Dog 1">
                 <h3>Male Dog One</h3>
                 <p>Meet our handsome and energetic male dogs.</p>
             </div>
             <div class="room">
-                <img src="https://example.com/male-dog-2.jpg" alt="Male Dog 2">
+                <img src="assets/image/males/image_123650291 (1).JPG" alt="Male Dog 2">
                 <h3>Male Dog Two</h3>
                 <p>Friendly and playful companions waiting for you.</p>
             </div>
             <div class="room">
-                <img src="https://example.com/male-dog-3.jpg" alt="Male Dog 3">
+                <img src="assets/image/males/image_123650291 (2).JPG" alt="Male Dog 3">
+                <h3>Male Dog Three</h3>
+                <p>Our charming and loyal male dogs.</p>
+            </div>
+            <div class="room">
+                <img src="assets/image/males/image_123650291 (3).JPG" alt="Male Dog 3">
+                <h3>Male Dog Three</h3>
+                <p>Our charming and loyal male dogs.</p>
+            </div>
+            <div class="room">
+                <img src="assets/image/males/image_123650291 (4).JPG" alt="Male Dog 3">
+                <h3>Male Dog Three</h3>
+                <p>Our charming and loyal male dogs.</p>
+            </div>
+            <div class="room">
+                <img src="assets/image/males/image_123650291 (5).JPG" alt="Male Dog 3">
+                <h3>Male Dog Three</h3>
+                <p>Our charming and loyal male dogs.</p>
+            </div>
+            <div class="room">
+                <img src="assets/image/males/image_123650291 (6).JPG" alt="Male Dog 3">
                 <h3>Male Dog Three</h3>
                 <p>Our charming and loyal male dogs.</p>
             </div>
@@ -362,31 +391,77 @@
         <h2>Female Dogs</h2>
         <div class="dog-container">
             <div class="room">
-                <img src="https://example.com/female-dog-1.jpg" alt="Female Dog 1">
+                <img src="assets/image/females/image_123650291.JPG" alt="Female Dog 1">
                 <h3>Female Dog One</h3>
                 <p>Meet our beautiful and loving female dogs.</p>
             </div>
             <div class="room">
-                <img src="https://example.com/female-dog-2.jpg" alt="Female Dog 2">
+                <img src="assets/image/females/image_123650291 (1).JPG" alt="Female Dog 2">
                 <h3>Female Dog Two</h3>
                 <p>Sweet and gentle companions ready to be your friend.</p>
             </div>
             <div class="room">
-                <img src="https://example.com/female-dog-3.jpg" alt="Female Dog 3">
-                <h3>Female Dog Three</h3>
-                <p>Our affectionate and playful female dogs.</p>
+                <img src="assets/image/females/image_123650291 (2).JPG" alt="Female Dog 2">
+                <h3>Female Dog Two</h3>
+                <p>Sweet and gentle companions ready to be your friend.</p>
+            </div><div class="room">
+                <img src="assets/image/females/image_123650291 (3).JPG" alt="Female Dog 2">
+                <h3>Female Dog Two</h3>
+                <p>Sweet and gentle companions ready to be your friend.</p>
             </div>
+            <div class="room">
+                <img src="assets/image/females/image_123650291 (4).JPG" alt="Female Dog 2">
+                <h3>Female Dog Two</h3>
+                <p>Sweet and gentle companions ready to be your friend.</p>
+            </div>
+            <div class="room">
+                <img src="assets/image/females/image_123650291 (5).JPG" alt="Female Dog 2">
+                <h3>Female Dog Two</h3>
+                <p>Sweet and gentle companions ready to be your friend.</p>
+            </div>
+            <div class="room">
+                <img src="assets/image/females/image_123650291 (6).JPG" alt="Female Dog 2">
+                <h3>Female Dog Two</h3>
+                <p>Sweet and gentle companions ready to be your friend.</p>
+            </div>
+
         </div>
     </section>
 
     <section id="contact">
         <h2>Contact Us</h2>
         <p>For reservations or inquiries, please contact us at:</p>
-        <p>Phone: +30 697 855 3777</p>
-    </section>
+        <p>Email: Elvaliente.bulgaria@gmail.com</p>
 
+        <div class="social-icons">
+            <!-- TikTok -->
+            <a href="https://www.tiktok.com/@elvalientebulgariaknl?_t=8pWomlHzvSi&_r=1" target="_blank" aria-label="TikTok">
+                <i class="fa fa-music" aria-hidden="true"></i> <!-- TikTok as music icon -->
+            </a>
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/elvalientebulgaria" target="_blank" aria-label="Facebook">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+            <!-- Viber -->
+            <a href="viber://chat?number=+359895451319" aria-label="Viber">
+                <i class="fa fa-phone" aria-hidden="true"></i> <!-- Viber as phone icon -->
+            </a>
+            <!-- WhatsApp -->
+            <a href="https://wa.me/+359895451319" target="_blank" aria-label="WhatsApp">
+                <i class="fa fa-whatsapp" aria-hidden="true"></i>
+            </a>
+            <!-- Telegram -->
+            <a href="https://t.me/+359895451319" target="_blank" aria-label="Telegram">
+                <i class="fa fa-paper-plane" aria-hidden="true"></i> <!-- Using paper-plane icon for Telegram -->
+            </a>
+        </div>
+    </section>
     <footer>
-        <p>&copy; 2024 Dog Kennel. All rights reserved. created by zotis</p>
+        <p>&copy; 2024 El Valiente. All rights reserved. created by zotis</p>
     </footer>
 
     <script>
